@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+:root{
+    --desktop-width: 1440px;
+    --mobile-width: 375px;
+
+    /* color Primary */
+
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    
+/* color Neutral */
+    --veryDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+
+    --ff: "Poppins", sans-serif;
+
+    --fw-light: 200;
+    --fw-normal: 400;
+    --fw-semibold: 600;
+
+    --fs: 15px;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff);
+    font-size: var(--fs);
+    font-weight: var(--fw-normal);
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.card-feature{
+  width: 90vw;
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem auto;
+}
+.heading{
+  width: 27vw;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.heading h1{
+  color: var(--veryDarkBlue);
+  font-size: 1.7rem;
+}
+.heading .light-heading{
+  font-weight: 200;
+}
+.heading p{
+  color: var(--grayishBlue);
+  margin-top: -8px;
+}
+
+/* cards */
+
+.cards{
+  width: 60vw;
+  display: grid;
+  align-items: center;  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  grid-template-areas: 
+  'card1 card2 card4'
+  'card1 card3 card4'
+  ;
+}
+
+.card-one{
+  grid-area: card1;
+  border-top: .3rem solid var(--cyan);
+}
+.card-two {
+  grid-area: card2;
+  border-top: .3rem solid var(--red);
+}
+.card-three {
+  grid-area: card3;
+  border-top: .3rem solid var(--orange);
+}
+.card-four {
+  grid-area: card4;
+  border-top: .3rem solid var(--blue);
+}
+
+
+.card{
+  width: 375px;
+  height: min-content;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+  box-shadow: 0 1rem 2rem .5rem #dedede;
+  border-radius: 8px;
+}
+.card p{
+  color: var(--grayishBlue);
+  font-size: 12px;
+}
+.card .card-img{
+  justify-self: right;
+}
+
+@media (max-width: 375px) {
+.heading {
+    width: 87%;
+    margin: 0 auto;
+   
+  }
+.cards {
+   width: 83%;
+   margin: 2rem auto 2rem;
+   row-gap: 1rem;
+   grid-template-areas:
+        'card1'
+        'card2'
+        'card3'
+        'card4'
+      ;
+    }
+.card {
+    width: 300px;
+    padding: 1rem;
+    gap: .7rem;
+    }
+.card .card-img img {
+  width: 70%;
+}
+}
+
